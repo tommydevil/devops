@@ -57,6 +57,13 @@ Keep an open scratch pad in Cloud9 or a text editor on your local computer for n
 
 In this step, you will connect to the source repository created in the previous step. Here, you use Git to clone and initialize a copy of your empty AWS CodeCommit repository. Then you specify the user name and email address used to annotate your commits.
 
+Run the following commands to set priviledges to Cloud9.
+
+```console
+user:~/environment $ git config --global credential.helper '!aws codecommit credential-helper $@'
+user:~/environment $ git config --global credential.UseHttpPath true
+```
+
 1. From CodeCommit Console, you can get the **https clone url** link for your repo.
 2. Go to Cloud9 IDE terminal prompt
 3. Run git clone to pull down a copy of the repository into the local repo:
